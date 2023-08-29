@@ -1,22 +1,29 @@
 {
-	"name": "AdvancedGraphsInteractive",
+	"name": "Advanced Graphs for Reports",
 	"namespace": "VIHA\\AdvancedGraphsInteractive",
-	"description": "A module for create advanced graphs from a REDCap report using a R script",
+	"description": "A module for creating advanced graphs from a REDCap report using the Observable JavaScript library",
 	"versions": [{
 		"1.0": "Initial Development Version on EMs"
 	}],
 	"framework-version": 11,
 	"compatibility": {
-		"redcap-version-min": "8.0.3"
+		"redcap-version-min": "13.1.25"
 	},
 	"authors": [{
 		"name": "Victor Espinosa",
-		"email": "Victor.Espinosa@viha.ca",
-		"institution": "VIHA"
+		"email": "Victor.Espinosa@islandhealth.ca",
+		"institution": "Island Health"
 	}, {
 		"name": "Alvaro Ciganda",
 		"email": "aciganda@iecs.org.ar",
 		"institution": "IECS"
+	}, {
+		"name": "David Cherry",
+		"email": "david.cherry@islandhealth.ca",
+		"institution": "Island Health"
+	}, {
+		"name": "Joel Cohen",
+		"institution": "Island Health"
 	}],
 	"no-csrf-pages": [
 		"view_dash_public"
