@@ -27,7 +27,7 @@ For REDCap administrators:
 
 - Clone this repo into `<redcap-root>/modules`.
 ```
-git clone https://github.com/victormeb/Advanced-Graphs-v4.0.0.git
+git clone https://github.com/djcdev/advanced_graphs_for_reports_v1.0.0.git
 ```
 
 ## Project Configuration
