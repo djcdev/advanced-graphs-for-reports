@@ -48,15 +48,15 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 		$dashboard_table_name = $this->dashboard_table_name;
 		try {
 			$result = $this->query("CREATE TABLE if not exists $dashboard_table_name (
-				dash_id INT(10) AUTO_INCREMENT PRIMARY KEY,
-				project_id INT(10), INDEX(project_id),
-				report_id INT(10),
+				dash_id INT AUTO_INCREMENT PRIMARY KEY,
+				project_id INT, INDEX(project_id),
+				report_id INT,
 				live_filters json,
 				title TEXT,
 				body LONGTEXT,
-				dash_order INT(3),
-				is_public tinyint(1) DEFAULT 0 NOT NULL),
-				ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"
+				dash_order INT,
+				is_public tinyint DEFAULT 0 NOT NULL,
+				ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP)"
 			, []);
 			$this->log("Created new $dashboard_table_name table (if one did not already exist)");
 		} catch (\Throwable $e) {
