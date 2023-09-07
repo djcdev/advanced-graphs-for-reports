@@ -19,29 +19,23 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	public $repeats_dictionary;
 
 	public $query_result;
-	
-    public function __construct()
-    {
-		global $conn;
-        parent::__construct();
-		
-		// enabled projects (pid and token at this module configuration)
-		$arr_projects_api_tokens = $this->getSystemSetting("projects-api-tokens");
-		$arr_projects_pids = $this->getSystemSetting("project-pid");
-		$arr_projects_tokens = $this->getSystemSetting("project-token");
 
-		$this->enabled_projects = Array();
-		foreach($arr_projects_api_tokens as $i => $valid) {
-			if ($valid=="true") {
-				$this->enabled_projects[$arr_projects_pids[$i]] = $arr_projects_tokens[$i];
+	private function getEnabledProjects()
+	{
+		if($this->enabled_projects == null)
+		{
+			$arr_projects_api_tokens = $this->getSystemSetting("projects-api-tokens");
+			$arr_projects_pids = $this->getSystemSetting("project-pid");
+			$arr_projects_tokens = $this->getSystemSetting("project-token");
+			
+			$this->enabled_projects = Array();
+			foreach($arr_projects_api_tokens as $i => $valid) {
+				if ($valid=="true") {
+					$this->enabled_projects[$arr_projects_pids[$i]] = $arr_projects_tokens[$i];
+				}
 			}
-		}		
-
-		$this->module_js_path = str_replace("\\","/",$this->getModulePath())."js/";
-		$this->module_css_path = str_replace("\\","/",$this->getModulePath())."css/";
-		$this->module_path = str_replace("\\","/",$this->getModulePath());
-    }
-
+		}
+	}
 
 	function redcap_module_system_enable($version) {
 		// Do stuff, e.g. create DB table
@@ -243,6 +237,9 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
     }
 	
 	function isEnabledProject($project_id) {
+		if($this->enabled_projects == null)
+			$this->getEnabledProjects();
+
 		return array_key_exists($project_id,$this->enabled_projects);
 	}
 	
@@ -251,6 +248,9 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	}
 	
 	function getProjectToken($project_id) {
+		if($this->enabled_projects == null)
+			$this->getEnabledProjects();
+
 		$token = null;
 		if($this->isEnabledProject($project_id)) {
 			$token = $this->enabled_projects[$project_id];
@@ -324,6 +324,10 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	}
 
 	function loadJS($js_file, $folder = "js", $outputToPage=true) {
+		if($this->module_js_path == null)
+		{
+			$this->module_js_path = str_replace("\\","/",$this->getModulePath())."js/";
+		}
 		// Create script tag
 		$output = "<script type=\"text/javascript\" src=\"" . $this->getURL($js_file,  $this->module_js_path). "\"></script>\n";
 		if ($outputToPage) {
@@ -336,8 +340,12 @@ class AdvancedGraphsInteractive extends \ExternalModules\AbstractExternalModule
 	// Output the link/style tag for a given CSS file
 	function loadCSS($css_file, $folder = "css", $outputToPage=true)
 	{
+		if($this->module_css_path == null)
+		{
+			$this->module_css_path = str_replace("\\","/",$this->getModulePath())."css/";
+		}
 		// Create link tag
-		$output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"screen,print\" href=\"" . $this->getURL($css_file,  $this->module_js_path) . "\">\n";
+		$output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"screen,print\" href=\"" . $this->getURL($css_file,  $this->module_css_path) . "\">\n";
 		if ($outputToPage) {
 			print $output;
 		} else {
