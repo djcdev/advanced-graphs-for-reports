@@ -241,3 +241,25 @@ let uuid = 0;
 export function getUuid() {
     return uuid++;
 }
+
+export function sortSetByArrayOrder(inputSet, orderArray) {
+    // Convert the Set to an array
+    const inputArray = [...inputSet];
+  
+    // Sort the array based on the orderArray
+    inputArray.sort((a, b) => {
+      const indexA = orderArray.indexOf(a);
+      const indexB = orderArray.indexOf(b);
+      
+      // If one of the elements is not found in the orderArray, move it to the end
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+      
+      return indexA - indexB;
+    });
+  
+    // Create a new Set from the sorted array
+    const sortedSet = new Set(inputArray);
+    
+    return sortedSet;
+  }

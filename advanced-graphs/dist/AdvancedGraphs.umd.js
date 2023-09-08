@@ -31223,6 +31223,25 @@ let uuid = 0;
 function getUuid() {
   return uuid++;
 }
+function sortSetByArrayOrder(inputSet, orderArray) {
+  // Convert the Set to an array
+  const inputArray = [...inputSet];
+
+  // Sort the array based on the orderArray
+  inputArray.sort((a, b) => {
+    const indexA = orderArray.indexOf(a);
+    const indexB = orderArray.indexOf(b);
+
+    // If one of the elements is not found in the orderArray, move it to the end
+    if (indexA === -1) return 1;
+    if (indexB === -1) return -1;
+    return indexA - indexB;
+  });
+
+  // Create a new Set from the sorted array
+  const sortedSet = new Set(inputArray);
+  return sortedSet;
+}
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/CategoricalFieldSelector.vue?vue&type=script&lang=js
 
 /* harmony default export */ var CategoricalFieldSelectorvue_type_script_lang_js = ({
@@ -68433,48 +68452,48 @@ function SummaryTablevue_type_template_id_250c69d8_scoped_true_render(_ctx, _cac
 const SummaryTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(SummaryTablevue_type_script_lang_js, [['render',SummaryTablevue_type_template_id_250c69d8_scoped_true_render],['__scopeId',"data-v-250c69d8"]])
 
 /* harmony default export */ var SummaryTable = (SummaryTable_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=template&id=124e416a&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=template&id=5d481e58&scoped=true
 
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_withScopeId = n => (pushScopeId("data-v-124e416a"), n = n(), popScopeId(), n);
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_1 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_withScopeId = n => (pushScopeId("data-v-5d481e58"), n = n(), popScopeId(), n);
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_1 = {
   class: "AG-cross-tab"
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_2 = /*#__PURE__*/CrosstabTablevue_type_template_id_124e416a_scoped_true_withScopeId(() => /*#__PURE__*/createBaseVNode("th", null, null, -1));
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_3 = ["colspan"];
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_4 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_2 = /*#__PURE__*/CrosstabTablevue_type_template_id_5d481e58_scoped_true_withScopeId(() => /*#__PURE__*/createBaseVNode("th", null, null, -1));
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_3 = ["colspan"];
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_4 = {
   class: "header"
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_5 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_5 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_6 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_6 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_7 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_7 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_8 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_8 = {
   class: "column-total"
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_9 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_9 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_10 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_10 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_11 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_11 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_12 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_12 = {
   key: 0
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_13 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_13 = {
   key: 1
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_14 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_14 = {
   key: 2
 };
-const CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_15 = {
+const CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_15 = {
   class: "grand-total"
 };
 const _hoisted_16 = {
@@ -68486,11 +68505,11 @@ const _hoisted_17 = {
 const _hoisted_18 = {
   key: 2
 };
-function CrosstabTablevue_type_template_id_124e416a_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", null, [createBaseVNode("table", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_1, [createBaseVNode("tr", null, [CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_2, createBaseVNode("th", {
+function CrosstabTablevue_type_template_id_5d481e58_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [createBaseVNode("table", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_1, [createBaseVNode("tr", null, [CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_2, createBaseVNode("th", {
     class: "header",
     colspan: $data.column_categories.length
-  }, toDisplayString($data.category_two), 9, CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_3)]), createBaseVNode("tr", null, [createBaseVNode("th", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_4, toDisplayString($data.category_one), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
+  }, toDisplayString($data.category_two), 9, CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_3)]), createBaseVNode("tr", null, [createBaseVNode("th", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_4, toDisplayString($data.category_one), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
     return openBlock(), createElementBlock("td", {
       key: index
     }, toDisplayString($data.choices_two[category]), 1);
@@ -68500,16 +68519,16 @@ function CrosstabTablevue_type_template_id_124e416a_scoped_true_render(_ctx, _ca
     }, [createBaseVNode("td", null, [createBaseVNode("p", null, toDisplayString($data.choices_one[row_categories]), 1)]), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList(row, (value, column) => {
       return openBlock(), createElementBlock("td", {
         key: column
-      }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_5, toDisplayString(value[1].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_6, toDisplayString($data.d3.format(".0%")(value[1][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_7, toDisplayString(value[1].value) + " (" + toDisplayString($data.d3.format(".0%")(value[1][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
-    }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_8, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_9, toDisplayString($data.totalColumn[row_categories].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_10, toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_11, toDisplayString($data.totalColumn[row_categories].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)])]);
+      }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_5, toDisplayString(value[1].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_6, toDisplayString($data.d3.format(".0%")(value[1][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_7, toDisplayString(value[1].value) + " (" + toDisplayString($data.d3.format(".0%")(value[1][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
+    }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_8, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_9, toDisplayString($data.totalColumn[row_categories].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_10, toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_11, toDisplayString($data.totalColumn[row_categories].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalColumn[row_categories][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)])]);
   }), 128)), createBaseVNode("tr", null, [createBaseVNode("th", null, toDisplayString($options.module.tt('table_total')), 1), (openBlock(true), createElementBlock(runtime_core_esm_bundler_Fragment, null, renderList($data.column_categories, (category, index) => {
     return openBlock(), createElementBlock("td", {
       class: "row-total",
       key: index
-    }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_12, toDisplayString($data.totalRow[category].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_13, toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_14, toDisplayString($data.totalRow[category].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
-  }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_124e416a_scoped_true_hoisted_15, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", _hoisted_16, toDisplayString($data.grandTotal), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", _hoisted_17, toDisplayString($data.d3.format(".0%")(1)), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", _hoisted_18, toDisplayString($data.grandTotal) + " (" + toDisplayString($data.d3.format(".0%")(1)) + ")", 1)) : createCommentVNode("", true)])])])]);
+    }, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_12, toDisplayString($data.totalRow[category].value), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_13, toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_14, toDisplayString($data.totalRow[category].value) + " (" + toDisplayString($data.d3.format(".0%")($data.totalRow[category][$data.attributeType])) + ")", 1)) : createCommentVNode("", true)]);
+  }), 128)), createBaseVNode("td", CrosstabTablevue_type_template_id_5d481e58_scoped_true_hoisted_15, [$data.percents_or_totals == 'totals' ? (openBlock(), createElementBlock("p", _hoisted_16, toDisplayString($data.grandTotal), 1)) : $data.percents_or_totals == 'percents' ? (openBlock(), createElementBlock("p", _hoisted_17, toDisplayString($data.d3.format(".0%")(1)), 1)) : $data.percents_or_totals == 'both' ? (openBlock(), createElementBlock("p", _hoisted_18, toDisplayString($data.grandTotal) + " (" + toDisplayString($data.d3.format(".0%")(1)) + ")", 1)) : createCommentVNode("", true)])])])]);
 }
-;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=template&id=124e416a&scoped=true
+;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=template&id=5d481e58&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=script&lang=js
 
@@ -68609,12 +68628,14 @@ function CrosstabTablevue_type_template_id_124e416a_scoped_true_render(_ctx, _ca
       }
     }
     if (this.parameters.unused_categories_one == 'keep') {
-      columns = new Set(Object.keys(choices_two));
+      rows = new Set(Object.keys(choices_one));
     }
 
     // If unused categories is set to keep, add all the categories to the rows and columns sets
     if (this.parameters.unused_categories_two == 'keep') {
-      rows = new Set(Object.keys(choices_one));
+      columns = new Set(Object.keys(choices_two));
+    } else {
+      columns = sortSetByArrayOrder(columns, Object.keys(choices_two));
     }
     var columnTotals = Array.from(columns).map(function (column) {
       var total = 0;
@@ -68728,10 +68749,10 @@ function CrosstabTablevue_type_template_id_124e416a_scoped_true_render(_ctx, _ca
 });
 ;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=124e416a&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=5d481e58&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=124e416a&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue?vue&type=style&index=0&id=5d481e58&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Tables/CrosstabTable.vue
 
@@ -68741,7 +68762,7 @@ function CrosstabTablevue_type_template_id_124e416a_scoped_true_render(_ctx, _ca
 ;
 
 
-const CrosstabTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(CrosstabTablevue_type_script_lang_js, [['render',CrosstabTablevue_type_template_id_124e416a_scoped_true_render],['__scopeId',"data-v-124e416a"]])
+const CrosstabTable_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(CrosstabTablevue_type_script_lang_js, [['render',CrosstabTablevue_type_template_id_5d481e58_scoped_true_render],['__scopeId',"data-v-5d481e58"]])
 
 /* harmony default export */ var CrosstabTable = (CrosstabTable_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/TableComponent.vue?vue&type=script&lang=js

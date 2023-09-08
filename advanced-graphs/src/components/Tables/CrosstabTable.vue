@@ -52,7 +52,7 @@
 <script>
     import * as d3 from "d3";
 
-    import { parseChoicesOrCalculations, isCheckboxField, getCheckboxReport } from "@/utils.js";
+    import { parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, sortSetByArrayOrder } from "@/utils.js";
 
     export default {
         name: "CrosstabTable",
@@ -142,12 +142,15 @@
             }
 
             if (this.parameters.unused_categories_one == 'keep') {
-                columns = new Set(Object.keys(choices_two));
+                rows = new Set(Object.keys(choices_one));
             }
 
             // If unused categories is set to keep, add all the categories to the rows and columns sets
-             if (this.parameters.unused_categories_two == 'keep') {
-                rows = new Set(Object.keys(choices_one));
+            if (this.parameters.unused_categories_two == 'keep') {
+                columns = new Set(Object.keys(choices_two));
+            }
+            else {
+                columns = sortSetByArrayOrder(columns, Object.keys(choices_two));
             }
 
            var columnTotals = Array.from(columns).map(function (column) {
