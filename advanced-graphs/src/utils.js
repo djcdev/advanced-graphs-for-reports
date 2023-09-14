@@ -204,6 +204,10 @@ export function getFieldLabel (field) {
     return (field.field_label).replace(/(<([^>]+)>)/gi, "");
 }
 
+export function cleanLabel (choice) {
+    return (choice).replace(/(<([^>]+)>)/gi, "");
+}
+
 // A function that wraps a string given a max width
 export function wrapString(str, maxWidth) {
     var newLineStr = "\n";

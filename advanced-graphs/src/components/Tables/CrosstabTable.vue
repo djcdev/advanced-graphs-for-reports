@@ -52,7 +52,7 @@
 <script>
     import * as d3 from "d3";
 
-    import { parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, sortSetByArrayOrder } from "@/utils.js";
+    import { parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, sortSetByArrayOrder, cleanLabel } from "@/utils.js";
 
     export default {
         name: "CrosstabTable",
@@ -69,6 +69,13 @@
 
             // Get the choices for the categorical second category field
             var choices_two = parseChoicesOrCalculations(this.data_dictionary[this.parameters.categorical_field_two]);
+
+            for (const [key, value] of Object.entries(choices_one)) {
+                choices_one[key] = cleanLabel(value);
+            }
+            for (const [key, value] of Object.entries(choices_two)) {
+                choices_two[key] = cleanLabel(value);
+            }
 
             var this_report = this.report;
 

@@ -24,7 +24,7 @@ import * as d3 from 'd3';
 // import * as d3Force from 'd3-force';
 // import {PieChart} from "@d3/pie-chart";
 // import {map, flatMap} from "d3-array";
-import {parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, getFieldLabel, wrapString, truncateString} from '@/utils';
+import {parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, getFieldLabel, wrapString, truncateString, cleanLabel} from '@/utils';
 import GroupedBarGraphOptions from './GroupedBarGraphOptions.vue';
 import StackedBarGraphOptions from './StackedBarGraphOptions.vue';
 
@@ -90,7 +90,14 @@ export default {
             // Get the choices for the category
             var choices_one = parseChoicesOrCalculations(this.data_dictionary[parameters.categorical_field_one]);
             var choices_two = parseChoicesOrCalculations(this.data_dictionary[parameters.categorical_field_two]);
-
+            
+            for (const [key, value] of Object.entries(choices_one)) {
+                choices_one[key] = cleanLabel(value);
+            }
+            for (const [key, value] of Object.entries(choices_two)) {
+                choices_two[key] = cleanLabel(value);
+            }
+           
             var this_report = this.report;
 
             // If the category is a checkbox field, get a checkbox field report

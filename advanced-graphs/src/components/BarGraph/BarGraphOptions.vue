@@ -56,7 +56,7 @@
 </template>
 
 <script>
-    import { parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, truncateString, wrapString} from '@/utils.js';
+    import { parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, truncateString, wrapString, cleanLabel} from '@/utils.js';
     import * as d3 from 'd3'; 
     import RadioComponent from '@/components/RadioComponent.vue';
 
@@ -75,8 +75,12 @@
         emits: ['updateParameters'],
         data() {
              // Get the choices for the category
-             var choices = parseChoicesOrCalculations(this.data_dictionary[this.parameters.categorical_field]);
-
+            var choices = parseChoicesOrCalculations(this.data_dictionary[this.parameters.categorical_field]);
+            
+            for (const [key, value] of Object.entries(choices)) {
+                choices[key] = cleanLabel(value);
+            }
+            
             var this_report = this.report;
 
             // If the category is a checkbox field, get a checkbox field report
