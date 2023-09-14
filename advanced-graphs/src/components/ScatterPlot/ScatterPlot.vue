@@ -24,7 +24,7 @@ import * as d3 from 'd3';
 //import * as d3Force from 'd3-force';
 // import {PieChart} from "@d3/pie-chart";
 // import {parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, getFieldLabel, wrapString, truncateString} from '@/utils';
-import {parseChoicesOrCalculations, getFieldLabel} from '@/utils';
+import {parseChoicesOrCalculations, getFieldLabel, cleanLabel} from '@/utils';
 // import {parseChoicesOrCalculations} from '@/utils';
 import ScatterPlotOptions from './ScatterPlotOptions.vue';
 
@@ -151,6 +151,9 @@ export default {
         getGraph(parameters) {
             // Get the choices for the category
             var choices = parseChoicesOrCalculations(this.data_dictionary[parameters.numeric_field]);
+            for (const [key, value] of Object.entries(choices)) {
+                choices[key] = cleanLabel(value);
+            }
 
             var this_report = this.report;
 

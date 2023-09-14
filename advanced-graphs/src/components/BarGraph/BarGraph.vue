@@ -23,7 +23,7 @@ import * as Plot from '@observablehq/plot';
 import * as d3 from 'd3';
 import * as d3Force from 'd3-force';
 // import {PieChart} from "@d3/pie-chart";
-import {parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, getFieldLabel, wrapString, truncateString} from '@/utils';
+import {parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, getFieldLabel, wrapString, truncateString, cleanLabel} from '@/utils';
 import BarGraphOptions from './BarGraphOptions.vue';
 import PieGraphOptions from './PieGraphOptions.vue';
 
@@ -90,6 +90,9 @@ export default {
             var theField = this.data_dictionary[parameters.categorical_field];
             // Get the choices for the category
             var choices = parseChoicesOrCalculations(theField);
+            for (const [key, value] of Object.entries(choices)) {
+                choices[key] = cleanLabel(value);
+            }
 
             var this_report = this.report;            
 

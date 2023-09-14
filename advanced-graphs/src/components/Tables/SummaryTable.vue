@@ -26,7 +26,7 @@
 <script>
     import * as d3 from "d3";
 
-    import { parseChoicesOrCalculations, isCheckboxField, getCheckboxReport } from "@/utils.js";
+    import { parseChoicesOrCalculations, isCheckboxField, getCheckboxReport, cleanLabel } from "@/utils.js";
 
     export default {
         name: "CrosstabTable",
@@ -43,6 +43,9 @@
 
             // Get the choices for the categorical field
             var choices = parseChoicesOrCalculations(theField);
+            for (const [key, value] of Object.entries(choices)) {
+                choices[key] = cleanLabel(value);
+            }
 
             var this_report = this.report;
             
