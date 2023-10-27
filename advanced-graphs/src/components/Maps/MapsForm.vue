@@ -128,6 +128,7 @@
   import CoordinateSelector from "./CoordinateSelector.vue";
   import UniqueLocationIdentifier from "./UniqueLocationIdentifier.vue";
   import { getCoordinateFields } from "@/utils";
+  import { reactive } from 'vue';
 
   export default {
     components: {
@@ -150,9 +151,18 @@
     mounted() {
       this.$emit("isReady", this.isFormReady);
     },
+    setup(props) {
+      var reactiveCellData = reactive(props.cellData);
+      if(typeof reactiveCellData.coordinate_selector !== 'undefined' && reactiveCellData.coordinate_selector !== null) {
+        reactiveCellData.coordinate_selector = reactiveCellData.coordinate_selector.replace(/&quot;/g,'"');
+      }
+      return {
+        reactiveCellData,
+      };
+    },
     data() {
       return {
-        formData: this.cellData || {},
+        formData: this.reactiveCellData   || {},
       };
     },
     computed: {

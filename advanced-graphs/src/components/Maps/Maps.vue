@@ -233,11 +233,14 @@ export default {
             if (this.parameters.is_count || !this.parameters.numeric_field)
                 aggregationParameters.push(d => d.length);
             else
-                aggregationParameters.push(d => d3[this.parameters.aggregation_function](d, v => v[this.parameters.numeric_field]));
+                aggregationParameters.push(d => d3[this.parameters.aggregation_function](d, v => v[this.parameters.numeric_field]));            
 
-            const coordinateFields = JSON.parse(this.parameters.coordinate_selector);
+            // When we echo out the dashboard we escape it, which breaks the coordinate_select JSON. We need to globally
+            // replace the &qout; character with ", the perform the JSON.parse to create the JS object.
+            var coordinates = this.parameters.coordinate_selector.replace(/&quot;/g, '"');
+            const coordinateFields = JSON.parse(coordinates);
             const longitude = coordinateFields.longitude.field_name;
-            const latitude = coordinateFields.latitude.field_name;
+            const latitude = coordinateFields.latitude.field_name;            
 
             //console.log('coordinateFields', coordinateFields);
 

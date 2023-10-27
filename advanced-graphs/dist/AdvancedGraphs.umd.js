@@ -69459,30 +69459,30 @@ const CrosstabTableForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(
 const TableForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(TableFormvue_type_script_lang_js, [['render',TableFormvue_type_template_id_7809ae16_scoped_true_render],['__scopeId',"data-v-7809ae16"]])
 
 /* harmony default export */ var TableForm = (TableForm_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/Maps.vue?vue&type=template&id=26d0139e&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/Maps.vue?vue&type=template&id=2f6076e8&scoped=true
 
-const Mapsvue_type_template_id_26d0139e_scoped_true_withScopeId = n => (_pushScopeId("data-v-26d0139e"), n = n(), _popScopeId(), n);
-const Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_1 = {
+const Mapsvue_type_template_id_2f6076e8_scoped_true_withScopeId = n => (_pushScopeId("data-v-2f6076e8"), n = n(), _popScopeId(), n);
+const Mapsvue_type_template_id_2f6076e8_scoped_true_hoisted_1 = {
   class: "AG-graph-container"
 };
-const Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_2 = {
+const Mapsvue_type_template_id_2f6076e8_scoped_true_hoisted_2 = {
   class: "AG-graph-title"
 };
-const Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_3 = {
+const Mapsvue_type_template_id_2f6076e8_scoped_true_hoisted_3 = {
   ref: "graphContainer",
   class: "AG-graphContainer"
 };
-const Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_4 = {
+const Mapsvue_type_template_id_2f6076e8_scoped_true_hoisted_4 = {
   class: "AG-graph-description"
 };
-function Mapsvue_type_template_id_26d0139e_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_1, [createBaseVNode("div", Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_3, null, 512), createBaseVNode("div", Mapsvue_type_template_id_26d0139e_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
+function Mapsvue_type_template_id_2f6076e8_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", Mapsvue_type_template_id_2f6076e8_scoped_true_hoisted_1, [createBaseVNode("div", Mapsvue_type_template_id_2f6076e8_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", Mapsvue_type_template_id_2f6076e8_scoped_true_hoisted_3, null, 512), createBaseVNode("div", Mapsvue_type_template_id_2f6076e8_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
     key: 0,
     parameters: $props.parameters,
     onUpdateParameters: _cache[0] || (_cache[0] = $event => $options.updateParameters($event))
   }, null, 40, ["parameters"])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=template&id=26d0139e&scoped=true
+;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=template&id=2f6076e8&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/leaflet/dist/leaflet-src.js
 var leaflet_src = __webpack_require__(5243);
@@ -69787,7 +69787,11 @@ const MapOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapOpti
       }
       var aggregationParameters = [filteredReport];
       if (this.parameters.is_count || !this.parameters.numeric_field) aggregationParameters.push(d => d.length);else aggregationParameters.push(d => d3_src_namespaceObject[this.parameters.aggregation_function](d, v => v[this.parameters.numeric_field]));
-      const coordinateFields = JSON.parse(this.parameters.coordinate_selector);
+
+      // When we echo out the dashboard we escape it, which breaks the coordinate_select JSON. We need to globally
+      // replace the &qout; character with ", the perform the JSON.parse to create the JS object.
+      var coordinates = this.parameters.coordinate_selector.replace(/&quot;/g, '"');
+      const coordinateFields = JSON.parse(coordinates);
       const longitude = coordinateFields.longitude.field_name;
       const latitude = coordinateFields.latitude.field_name;
 
@@ -69826,10 +69830,10 @@ const MapOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapOpti
 });
 ;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/Maps.vue?vue&type=style&index=0&id=26d0139e&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/Maps.vue?vue&type=style&index=0&id=2f6076e8&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=style&index=0&id=26d0139e&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue?vue&type=style&index=0&id=2f6076e8&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Maps/Maps.vue
 
@@ -69839,28 +69843,28 @@ const MapOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapOpti
 ;
 
 
-const Maps_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Mapsvue_type_script_lang_js, [['render',Mapsvue_type_template_id_26d0139e_scoped_true_render],['__scopeId',"data-v-26d0139e"]])
+const Maps_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(Mapsvue_type_script_lang_js, [['render',Mapsvue_type_template_id_2f6076e8_scoped_true_render],['__scopeId',"data-v-2f6076e8"]])
 
 /* harmony default export */ var Maps = (Maps_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/MapsForm.vue?vue&type=template&id=8be67108&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/MapsForm.vue?vue&type=template&id=8484683c&scoped=true
 
-const MapsFormvue_type_template_id_8be67108_scoped_true_withScopeId = n => (_pushScopeId("data-v-8be67108"), n = n(), _popScopeId(), n);
-const MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_1 = {
+const MapsFormvue_type_template_id_8484683c_scoped_true_withScopeId = n => (_pushScopeId("data-v-8484683c"), n = n(), _popScopeId(), n);
+const MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_1 = {
   key: 0
 };
-const MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_2 = {
+const MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_2 = {
   class: "AG-two-panes"
 };
-const MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_3 = {
+const MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_3 = {
   class: "AG-pane-left"
 };
-const MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_4 = {
+const MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_4 = {
   class: "AG-pane-right"
 };
-const MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_5 = {
+const MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_5 = {
   key: 0
 };
-function MapsFormvue_type_template_id_8be67108_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function MapsFormvue_type_template_id_8484683c_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_instrument_selector = resolveComponent("instrument-selector");
   const _component_helpful_parameter = resolveComponent("helpful-parameter");
   const _component_coordinate_selector = resolveComponent("coordinate-selector");
@@ -69872,7 +69876,7 @@ function MapsFormvue_type_template_id_8be67108_scoped_true_render(_ctx, _cache, 
     modelValue: $data.formData.instrument,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.formData.instrument = $event),
     availableInstruments: $options.availableInstruments
-  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_1, [createBaseVNode("div", MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_2, [createBaseVNode("div", MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_1, [createBaseVNode("div", MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_2, [createBaseVNode("div", MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('title'),
     "help-text": $options.module.tt('title_help')
   }, {
@@ -69900,7 +69904,7 @@ function MapsFormvue_type_template_id_8be67108_scoped_true_render(_ctx, _cache, 
       fields: $options.report_fields_by_repeat_instrument[$data.formData.instrument].fields
     }, null, 8, ["modelValue", "fields"])]),
     _: 1
-  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_4, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_4, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('map_cluster_by_location_or_counts'),
     "help-text": $options.module.tt('map_cluster_by_location_or_counts_help')
   }, {
@@ -69913,7 +69917,7 @@ function MapsFormvue_type_template_id_8be67108_scoped_true_render(_ctx, _cache, 
       labels: [$options.module.tt('map_location'), $options.module.tt('map_counts')]
     }, null, 8, ["modelValue", "labels"])]),
     _: 1
-  }, 8, ["label-text", "help-text"]), $data.formData.cluster_by_location_or_counts == 'location' ? (openBlock(), createElementBlock("div", MapsFormvue_type_template_id_8be67108_scoped_true_hoisted_5, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, 8, ["label-text", "help-text"]), $data.formData.cluster_by_location_or_counts == 'location' ? (openBlock(), createElementBlock("div", MapsFormvue_type_template_id_8484683c_scoped_true_hoisted_5, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('map_location_identifier'),
     "help-text": $options.module.tt('map_location_identifier_help')
   }, {
@@ -69977,7 +69981,7 @@ function MapsFormvue_type_template_id_8be67108_scoped_true_render(_ctx, _cache, 
     _: 1
   }, 8, ["label-text", "help-text"])])])])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/Maps/MapsForm.vue?vue&type=template&id=8be67108&scoped=true
+;// CONCATENATED MODULE: ./src/components/Maps/MapsForm.vue?vue&type=template&id=8484683c&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/CoordinateSelector.vue?vue&type=template&id=8d533a9c&scoped=true
 
@@ -70232,6 +70236,7 @@ const UniqueLocationIdentifier_exports_ = /*#__PURE__*/(0,exportHelper/* default
 
 
 
+
 /* harmony default export */ var MapsFormvue_type_script_lang_js = ({
   components: {
     HelpfulParameter: HelpfulParameter,
@@ -70253,9 +70258,18 @@ const UniqueLocationIdentifier_exports_ = /*#__PURE__*/(0,exportHelper/* default
   mounted() {
     this.$emit("isReady", this.isFormReady);
   },
+  setup(props) {
+    var reactiveCellData = reactive(props.cellData);
+    if (typeof reactiveCellData.coordinate_selector !== 'undefined' && reactiveCellData.coordinate_selector !== null) {
+      reactiveCellData.coordinate_selector = reactiveCellData.coordinate_selector.replace(/&quot;/g, '"');
+    }
+    return {
+      reactiveCellData
+    };
+  },
   data() {
     return {
-      formData: this.cellData || {}
+      formData: this.reactiveCellData || {}
     };
   },
   computed: {
@@ -70342,10 +70356,10 @@ const UniqueLocationIdentifier_exports_ = /*#__PURE__*/(0,exportHelper/* default
 });
 ;// CONCATENATED MODULE: ./src/components/Maps/MapsForm.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/MapsForm.vue?vue&type=style&index=0&id=8be67108&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Maps/MapsForm.vue?vue&type=style&index=0&id=8484683c&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/Maps/MapsForm.vue?vue&type=style&index=0&id=8be67108&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/Maps/MapsForm.vue?vue&type=style&index=0&id=8484683c&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/Maps/MapsForm.vue
 
@@ -70355,7 +70369,7 @@ const UniqueLocationIdentifier_exports_ = /*#__PURE__*/(0,exportHelper/* default
 ;
 
 
-const MapsForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapsFormvue_type_script_lang_js, [['render',MapsFormvue_type_template_id_8be67108_scoped_true_render],['__scopeId',"data-v-8be67108"]])
+const MapsForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(MapsFormvue_type_script_lang_js, [['render',MapsFormvue_type_template_id_8484683c_scoped_true_render],['__scopeId',"data-v-8484683c"]])
 
 /* harmony default export */ var MapsForm = (MapsForm_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Network/NetworkGraphForm.vue?vue&type=template&id=13e3abdf&scoped=true
