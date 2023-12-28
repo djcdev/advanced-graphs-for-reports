@@ -28,7 +28,7 @@
         </div>
         <div class="AG-bar-graph-options-block">
             <h3>{{module.tt("stacked_y_axis")}}</h3>
-            <label>{{module.tt("stacked_left_margin")}}:<input ref="bottom_margin" type="number" v-model.number="left_margin" @input="updateParameters" /></label>
+            <label>{{module.tt("stacked_left_margin")}}:<input ref="left_margin" type="number" v-model.number="left_margin" @input="updateParameters" /></label>
             <label>{{module.tt("stacked_y_title_offset")}}:<input ref="y_title_offset" type="range" min="0" max="100" v-model.number="y_title_offset" @input="updateParameters" /></label>
             <label>{{module.tt("stacked_y_title_size")}}:<input ref="y_title_size" type="range" min="0" max="50" v-model.number="y_title_size" @input="updateParameters" /></label>
             <label>{{module.tt("stacked_y_label_size")}}:<input ref="y_label_size" type="range" min="0" max="50" v-model.number="y_label_size" @input="updateParameters" /></label>
