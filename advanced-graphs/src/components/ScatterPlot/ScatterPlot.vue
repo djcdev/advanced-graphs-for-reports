@@ -420,7 +420,7 @@ export default {
                 marks: [
                     // Plots several marks; the Plot.ruleY is an empty plot just to fill when 
                     // condition is not true
-                    (parameters.scatter_type == "dots & lines")?circleLinePlot:Plot.ruleY([0]),
+                    (parameters.scatter_type == "dots_lines")?circleLinePlot:Plot.ruleY([0]),
  
                     (parameters.marker_type == "circle")?circlePlot:Plot.ruleY([0]),
                     (parameters.marker_type == "square")?triangleDownPlot:Plot.ruleY([0]),

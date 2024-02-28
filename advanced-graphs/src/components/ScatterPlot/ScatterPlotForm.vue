@@ -70,7 +70,7 @@
                   <radio-component
                         v-model="formData.scatter_type"
                         :name="'scatter_type'"
-                        :values="['dots', 'dots & lines']"
+                        :values="['dots', 'dots_lines']"
                         :defaultValue="'dots'"
                         :labels="[module.tt('scatter_dots'), module.tt('scatter_dots_lines')]"
                   ></radio-component>

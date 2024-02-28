@@ -290,7 +290,7 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ 8988:
+/***/ 7207:
 /***/ (function(module) {
 
 var $TypeError = TypeError;
@@ -1476,7 +1476,7 @@ var $ = __webpack_require__(2109);
 var toObject = __webpack_require__(7908);
 var lengthOfArrayLike = __webpack_require__(6244);
 var setArrayLength = __webpack_require__(3658);
-var doesNotExceedSafeInteger = __webpack_require__(8988);
+var doesNotExceedSafeInteger = __webpack_require__(7207);
 var fails = __webpack_require__(7293);
 
 var INCORRECT_TO_LENGTH = fails(function () {
@@ -66676,22 +66676,22 @@ const LikertGraphOptions_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)
 const LikertGraph_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(LikertGraphvue_type_script_lang_js, [['render',LikertGraphvue_type_template_id_261fa47e_scoped_true_render],['__scopeId',"data-v-261fa47e"]])
 
 /* harmony default export */ var LikertGraph = (LikertGraph_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=template&id=431e45d2&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=template&id=34c5231c&scoped=true
 
-const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_withScopeId = n => (_pushScopeId("data-v-431e45d2"), n = n(), _popScopeId(), n);
-const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_1 = {
+const ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_withScopeId = n => (_pushScopeId("data-v-34c5231c"), n = n(), _popScopeId(), n);
+const ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_hoisted_1 = {
   key: 0
 };
-const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_2 = {
+const ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_hoisted_2 = {
   class: "AG-two-panes"
 };
-const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_3 = {
+const ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_hoisted_3 = {
   class: "AG-pane-left"
 };
-const ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_4 = {
+const ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_hoisted_4 = {
   class: "AG-pane-right"
 };
-function ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_instrument_selector = resolveComponent("instrument-selector");
   const _component_helpful_parameter = resolveComponent("helpful-parameter");
   const _component_scatter_field_selector = resolveComponent("scatter-field-selector");
@@ -66701,7 +66701,7 @@ function ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_render(_ctx, _
     modelValue: $data.formData.instrument,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => $data.formData.instrument = $event),
     availableInstruments: $options.availableInstruments
-  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_1, [createBaseVNode("div", ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_2, [createBaseVNode("div", ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, null, 8, ["modelValue", "availableInstruments"]), $data.formData.instrument !== null && typeof $data.formData.instrument === 'string' ? (openBlock(), createElementBlock("div", ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_hoisted_1, [createBaseVNode("div", ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_hoisted_2, [createBaseVNode("div", ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_hoisted_3, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('title'),
     "help-text": $options.module.tt('title_help')
   }, {
@@ -66729,7 +66729,7 @@ function ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_render(_ctx, _
       fields: $options.report_fields_by_repeat_instrument[$data.formData.instrument].fields
     }, null, 8, ["modelValue", "fields"])]),
     _: 1
-  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_hoisted_4, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
+  }, 8, ["label-text", "help-text"])]), createBaseVNode("div", ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_hoisted_4, [runtime_core_esm_bundler_createVNode(_component_helpful_parameter, {
     "label-text": $options.module.tt('scatter_field_y'),
     "help-text": $options.module.tt('scatter_field_help')
   }, {
@@ -66762,7 +66762,7 @@ function ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_render(_ctx, _
       modelValue: $data.formData.scatter_type,
       "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => $data.formData.scatter_type = $event),
       name: 'scatter_type',
-      values: ['dots', 'dots & lines'],
+      values: ['dots', 'dots_lines'],
       defaultValue: 'dots',
       labels: [$options.module.tt('scatter_dots'), $options.module.tt('scatter_dots_lines')]
     }, null, 8, ["modelValue", "labels"])]),
@@ -66778,7 +66778,7 @@ function ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_render(_ctx, _
     _: 1
   }, 8, ["label-text", "help-text"])])])])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=template&id=431e45d2&scoped=true
+;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=template&id=34c5231c&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterFieldSelector.vue?vue&type=template&id=09712275&scoped=true
 
@@ -66976,10 +66976,10 @@ const ScatterFieldSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.
 });
 ;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=style&index=0&id=431e45d2&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=style&index=0&id=34c5231c&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=style&index=0&id=431e45d2&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue?vue&type=style&index=0&id=34c5231c&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlotForm.vue
 
@@ -66989,33 +66989,33 @@ const ScatterFieldSelector_exports_ = /*#__PURE__*/(0,exportHelper/* default */.
 ;
 
 
-const ScatterPlotForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ScatterPlotFormvue_type_script_lang_js, [['render',ScatterPlotFormvue_type_template_id_431e45d2_scoped_true_render],['__scopeId',"data-v-431e45d2"]])
+const ScatterPlotForm_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ScatterPlotFormvue_type_script_lang_js, [['render',ScatterPlotFormvue_type_template_id_34c5231c_scoped_true_render],['__scopeId',"data-v-34c5231c"]])
 
 /* harmony default export */ var ScatterPlotForm = (ScatterPlotForm_exports_);
-;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlot.vue?vue&type=template&id=0fd14c30&scoped=true
+;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlot.vue?vue&type=template&id=72dfe1a6&scoped=true
 
-const ScatterPlotvue_type_template_id_0fd14c30_scoped_true_withScopeId = n => (_pushScopeId("data-v-0fd14c30"), n = n(), _popScopeId(), n);
-const ScatterPlotvue_type_template_id_0fd14c30_scoped_true_hoisted_1 = {
+const ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_withScopeId = n => (_pushScopeId("data-v-72dfe1a6"), n = n(), _popScopeId(), n);
+const ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_hoisted_1 = {
   class: "AG-graph-container"
 };
-const ScatterPlotvue_type_template_id_0fd14c30_scoped_true_hoisted_2 = {
+const ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_hoisted_2 = {
   class: "AG-graph-title"
 };
-const ScatterPlotvue_type_template_id_0fd14c30_scoped_true_hoisted_3 = {
+const ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_hoisted_3 = {
   ref: "graphContainer",
   class: "AG-graphContainer"
 };
-const ScatterPlotvue_type_template_id_0fd14c30_scoped_true_hoisted_4 = {
+const ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_hoisted_4 = {
   class: "AG-graph-description"
 };
-function ScatterPlotvue_type_template_id_0fd14c30_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", ScatterPlotvue_type_template_id_0fd14c30_scoped_true_hoisted_1, [createBaseVNode("div", ScatterPlotvue_type_template_id_0fd14c30_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", ScatterPlotvue_type_template_id_0fd14c30_scoped_true_hoisted_3, null, 512), createBaseVNode("div", ScatterPlotvue_type_template_id_0fd14c30_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
+function ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_hoisted_1, [createBaseVNode("div", ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_hoisted_2, [createBaseVNode("h3", null, toDisplayString($props.parameters.title || ""), 1)]), createBaseVNode("div", ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_hoisted_3, null, 512), createBaseVNode("div", ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_hoisted_4, [createBaseVNode("p", null, toDisplayString($props.parameters.description || ""), 1)]), $props.editorMode ? (openBlock(), createBlock(resolveDynamicComponent($data.moreOptionsComponent), {
     key: 0,
     parameters: $props.parameters,
     onUpdateParameters: _cache[0] || (_cache[0] = $event => $options.updateParameters($event))
   }, null, 40, ["parameters"])) : createCommentVNode("", true)]);
 }
-;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=template&id=0fd14c30&scoped=true
+;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=template&id=72dfe1a6&scoped=true
 
 ;// CONCATENATED MODULE: ./node_modules/@observablehq/plot/src/marks/dot.js
 
@@ -68239,7 +68239,7 @@ function sortValuesByDate(xValues, yValues) {
         marks: [
         // Plots several marks; the Plot.ruleY is an empty plot just to fill when 
         // condition is not true
-        parameters.scatter_type == "dots & lines" ? circleLinePlot : ruleY([0]), parameters.marker_type == "circle" ? circlePlot : ruleY([0]), parameters.marker_type == "square" ? triangleDownPlot : ruleY([0]), parameters.marker_type == "square" ? trianglePlot : ruleY([0]), parameters.marker_type == "triangle" ? trianglePlot : ruleY([0]), yAxisTitle, yAxisLabels, xAxisTitle, xAxisLabels],
+        parameters.scatter_type == "dots_lines" ? circleLinePlot : ruleY([0]), parameters.marker_type == "circle" ? circlePlot : ruleY([0]), parameters.marker_type == "square" ? triangleDownPlot : ruleY([0]), parameters.marker_type == "square" ? trianglePlot : ruleY([0]), parameters.marker_type == "triangle" ? trianglePlot : ruleY([0]), yAxisTitle, yAxisLabels, xAxisTitle, xAxisLabels],
         marginBottom: bottom_margin,
         marginLeft: parameters.left_margin ? parameters.left_margin : 80,
         x: {
@@ -68288,10 +68288,10 @@ function sortValuesByDate(xValues, yValues) {
 });
 ;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=script&lang=js
  
-;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlot.vue?vue&type=style&index=0&id=0fd14c30&scoped=true&lang=css
+;// CONCATENATED MODULE: ./node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-54.use[0]!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-54.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-54.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/ScatterPlot/ScatterPlot.vue?vue&type=style&index=0&id=72dfe1a6&scoped=true&lang=css
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=style&index=0&id=0fd14c30&scoped=true&lang=css
+;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue?vue&type=style&index=0&id=72dfe1a6&scoped=true&lang=css
 
 ;// CONCATENATED MODULE: ./src/components/ScatterPlot/ScatterPlot.vue
 
@@ -68301,7 +68301,7 @@ function sortValuesByDate(xValues, yValues) {
 ;
 
 
-const ScatterPlot_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ScatterPlotvue_type_script_lang_js, [['render',ScatterPlotvue_type_template_id_0fd14c30_scoped_true_render],['__scopeId',"data-v-0fd14c30"]])
+const ScatterPlot_exports_ = /*#__PURE__*/(0,exportHelper/* default */.Z)(ScatterPlotvue_type_script_lang_js, [['render',ScatterPlotvue_type_template_id_72dfe1a6_scoped_true_render],['__scopeId',"data-v-72dfe1a6"]])
 
 /* harmony default export */ var ScatterPlot = (ScatterPlot_exports_);
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/Tables/TableComponent.vue?vue&type=template&id=63c8ea48&scoped=true
